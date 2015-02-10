@@ -1,0 +1,13 @@
+<h1><center>Total number of Products (<%= @products.length %>)</center></h1>
+<p>Find me in app/views/products/index.html.erb</p>
+
+<%= link_to "New Product", "/products/new" %>
+
+<% @products.each do |product| %>
+  <p> <%= product.name %>, <%= product.description %> <%= product.price_in_cents %> </p>
+
+ 
+<%= link_to "Show Product","/products/#{product.id}" %> 
+
+
+<% end %>
