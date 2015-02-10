@@ -2753,3 +2753,284 @@ Processing by ProductsController#new as HTML
   Rendered products/_form.html.erb (2.4ms)
   Rendered products/new.html.erb within layouts/application (3.5ms)
 Completed 200 OK in 76ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/5" for ::1 at 2015-02-10 10:03:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered products/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 113ms (Views: 91.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/products-20cc904d318086f5449c1b472d2b063a.css?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/application-40045cef50f69417a88e0b87b8a36d9e.css?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:03:22 -0500
+
+
+Started GET "/products/5/edit" for ::1 at 2015-02-10 10:03:39 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered products/_form.html.erb (20.0ms)
+  Rendered products/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/products/5" for ::1 at 2015-02-10 10:03:52 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9HceuaUQfV1fbNXKuIXMOrH6Rnsh0MIc0QLFZtrCusdsR9VzWQHOmMUUflzjjs8QDMu2pynlzdscBWcJXBEo/w==", "product"=>{"name"=>"Product1", "description"=>"TESTING TESGING", "price_in_cents"=>"95"}, "commit"=>"Update Product", "id"=>"5"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "products" SET "price_in_cents" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["price_in_cents", 95], ["updated_at", "2015-02-10 15:03:52.720697"], ["id", 5]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 10ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/products/5" for ::1 at 2015-02-10 10:03:52 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/application-40045cef50f69417a88e0b87b8a36d9e.css?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/products-20cc904d318086f5449c1b472d2b063a.css?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:03:52 -0500
+
+
+Started GET "/products" for ::1 at 2015-02-10 10:03:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/5" for ::1 at 2015-02-10 10:04:01 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered products/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2015-02-10 10:04:03 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/6" for ::1 at 2015-02-10 10:04:05 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2015-02-10 10:04:08 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2015-02-10 10:05:02 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/products-535526b6a28ead2abc5dec10c45f22e8.css?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/application-129dde2aa5c2ae6daf13549e11b77624.css?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:05:02 -0500
+
+
+Started GET "/products/6" for ::1 at 2015-02-10 10:05:04 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 94ms (Views: 91.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for ::1 at 2015-02-10 10:12:33 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (2.9ms)
+  Rendered products/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2015-02-10 10:12:35 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zDIhk24yUYUTOX4AlsKuIYu9CHkwk4NHcBjvIcyHbaBUAupZkiPiQIlB1ZbNya0LNoz4pTimjIC9H01OSlT/mA==", "product"=>{"name"=>"", "description"=>"", "price_in_cents"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered products/_form.html.erb (2.0ms)
+  Rendered products/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 74ms (Views: 67.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:12:35 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:12:35 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:12:35 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:12:35 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:12:35 -0500
+
+
+Started POST "/products" for ::1 at 2015-02-10 10:12:39 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p8qUn179oeRauCUkwTnxF6dXSnmuOAVTw2VrNZsh25s/+l9VouwSIcDAjrKaMvI9Gma6paYNCpQOYslaHfJJow==", "product"=>{"name"=>"", "description"=>"", "price_in_cents"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered products/_form.html.erb (4.4ms)
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:12:39 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:12:39 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:12:39 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:12:39 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:12:39 -0500
+
+
+Started POST "/products" for ::1 at 2015-02-10 10:12:44 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wtANf+N2RsjU4acfh3w4RsG4SFixR6SEStkiAcVfCRta4Ma1H2f1DU6ZDIncdztsfIm4hLlyq0OH3oBuQ4ybIw==", "product"=>{"name"=>"Rainforest1", "description"=>"", "price_in_cents"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered products/_form.html.erb (1.5ms)
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:12:44 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:12:44 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:12:44 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:12:44 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:12:44 -0500
+
+
+Started POST "/products" for ::1 at 2015-02-10 10:13:05 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4WXj3c1q3IMVJypPGl5qCNoI9v9Mlf3WOKrG8WJSK3XtVxFiyQYt5YsNz9nYnqCnlnTB/UHWDCV5Ql0Q1ralQ==", "product"=>{"name"=>"Rainforest1", "description"=>"Validation Testing", "price_in_cents"=>"14"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "price_in_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rainforest1"], ["description", "Validation Testing"], ["price_in_cents", 14], ["created_at", "2015-02-10 15:13:05.403280"], ["updated_at", "2015-02-10 15:13:05.403280"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2015-02-10 10:13:05 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:13:05 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:13:05 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:13:05 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:13:05 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:13:05 -0500
+
+
+Started GET "/assets/products-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-10 10:13:12 -0500
+
+
+Started GET "/assets/application-79e1233a68e5fdd328d8a2ea17ddef8a.js?body=1" for ::1 at 2015-02-10 10:13:12 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-10 10:13:12 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-10 10:13:12 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-10 10:13:12 -0500
