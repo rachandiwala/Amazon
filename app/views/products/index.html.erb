@@ -1,18 +1,34 @@
 <h1><center>Total number of Products (<%= @products.length %>)</center></h1>
 
-<%= link_to "New Product", "/products/new" %>
+<div id="nav">
+  
+  <div class="container">
+    <ul class="pull-left">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Browse</a></li>
+
+<li><%= link_to "New Product", "/products/new" %></li>
+
+    </ul>
+  </div>
+ </div>
+
+  
 
 <% @products.each do |product| %>
   <p> <%= product.name %>, <%= product.description %> <%= product.formatted_price %> </p>
 
- 
+<div id="show">
+<div class="pull-center">
+<p>
 <%= link_to "Show Product","/products/#{product.id}" %> 
-
-
+</p>
+</div>
+</div>
 <% end %>
 
 
-<<footer>
+<footer>
   
   <p>Find me in app/views/products/index.html.erb</p>
 

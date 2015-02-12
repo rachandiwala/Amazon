@@ -1,7 +1,12 @@
-<h1><center>Products#edit</center></h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1><center>Edit Product</center></h1>
 
 
 <%= link_to "Back to Products Main Page", products_path %>
 
 <%= render 'form' %> | <%= link_to "Delete Product", @product, method: :delete, date: {confirm: "Are you sure you want to delete this product?"} %>
+
+
+
+<footer>
+<p>Find me in app/views/products/edit.html.erb</p>
+</footer>

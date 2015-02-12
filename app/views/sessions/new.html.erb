@@ -1,7 +1,10 @@
-<h1>Log in</h1><h1>Sessions#new</h1>
+<h1>Log in</h1>
 
 
-
+<div id="log-in">
+  <div class="container">
+    
+    <ul class="pull-middle">
 <%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %><br/>
@@ -13,11 +16,16 @@
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
 <% end %>
+</ul>
+</div>
+</div>
 
-
-
+<div id ="footer">
+<div class="container">
 <footer>
   
   <p>Find me in app/views/sessions/new.html.erb</p>
 
 </footer>
+</div>
+</div>

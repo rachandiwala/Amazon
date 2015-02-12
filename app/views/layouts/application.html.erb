@@ -18,7 +18,7 @@
 
     <%= yield %>
  
-
+<footer>
 <p class="userinfo">
       <% if current_user %>
         Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
@@ -27,6 +27,6 @@
       <% end %>
     </p>
 
-
+</footer>
 </body>
 </html>
