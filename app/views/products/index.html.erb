@@ -13,16 +13,20 @@
   </div>
  </div>
 
-  
+  <div id="show">
+  <div class="container">
+
+<p>
 
 <% @products.each do |product| %>
-  <p> <%= product.name %>, <%= product.description %> <%= product.formatted_price %> </p>
 
-<div id="show">
-<div class="pull-center">
-<p>
 <%= link_to "Show Product","/products/#{product.id}" %> 
+
+  <p> Product name: <%= product.name %>, Product description: <%= product.description %>, Product price: <%= product.formatted_price %> </p>
+
+
 </p>
+
 </div>
 </div>
 <% end %>

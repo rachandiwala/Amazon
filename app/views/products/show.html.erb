@@ -15,16 +15,23 @@
   
 </div>
     
+<div id="Product-info">
+<div class="container">
+<div class "center_prod_box">
+<h3> Product Information</h3>
 
+<p>Product Name: <%= @product.name %><br> Product Description: <%= @product.description %><br> Product Price: <%= @product.formatted_price %> </p>
 
+</div>
+</div>
+</div>
 
-<p> <%= @product.name %>, <%= @product.description %> <%= @product.formatted_price %> </p>
-
-
-
+<div id="review">
+<div class="Container">
+<div class="pull-left">
 <h3>Reviews</h3>
 
-  <p>Reviews for <%= @product.name %></p>
+  <p>Reviews for Product: <%= @product.name %></p>
 
   <% @product.reviews.each do |review| %>
     <p>
@@ -37,11 +44,14 @@
     </p>
   <% end %>
 
+</div>
+</div>
+</div>
 
   
 <table>
   <% if current_user %>
-  <h4>New Review</h4>
+  <h3>New Review</h3>
 
   <%= form_for([@product, @review]) do |f| %>
     <% if @review.errors.any? %>
@@ -56,7 +66,7 @@
       </div>
     <% end %>
 
-<center>
+
   <tr>
     <div class="field">
       <td> <%= f.label :comment %><br /> </td>
@@ -69,7 +79,7 @@
       <td> <%= f.submit %></td>
     </div>
     </tr>
-</center>
+
 
   <% end %>
 
