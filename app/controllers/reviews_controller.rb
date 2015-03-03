@@ -22,7 +22,12 @@ class ReviewsController < ApplicationController
     # )
 
     if @review.save
-      redirect_to products_path, notice: 'Review created successfully'
+        respond_to do |format|
+          format.html do
+            redirect_to products_path(@review.product), notice: 'Review created successfully'
+          end
+          format.js   #create.js.erb
+        end
     else
       render 'products/show'
     end

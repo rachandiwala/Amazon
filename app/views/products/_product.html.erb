@@ -1,0 +1,44 @@
+<!--
+<div id="nav">
+  <div class="container">
+    <ul class="pull-left">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Browse</a></li>
+
+<li><%= link_to "New Product", "/products/new" %></li>
+
+    </ul>
+  </div>
+ </div>
+
+<div id="show">
+  <div class="container">
+    <p>
+
+      <% @products.each do |product| %>
+
+      <%= link_to "Show Product","/products/#{product.id}" %> 
+
+      <p> Product name: <%= product.name %>, Product description: <%= product.description %>, Product price: <%= product.formatted_price %> </p>
+
+
+    </p>
+
+  </div>
+</div>
+<% end %>
+
+-->
+
+
+<li class="product">
+<%= link_to product_path(product.id) do %>
+  <h2>
+    <%= number_to_currency(product.formatted_price) %>
+    <%= product.name %>
+  </h2>
+<% end %>
+<!--   keeps the description to 100 characters or less   -->
+<p><%= truncate(product.description, length: 100) %></p>
+</li>
+

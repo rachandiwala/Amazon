@@ -1,15 +1,33 @@
 class ProductsController < ApplicationController
-  def index
-    @products = Product.all
+ def index
+    @products = if params[:search]
+      # Product.where("name ILIKE ?", "%#{params[:search]}%").page(params[:page])
+      Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+      Product.all.page(params[:page])
+    end
+
+    respond_to do |format|
+      format.html do        # render 'index.html.erb'
+
+        if request.xhr?
+          render @products
+        end
+
+      end
+
+      format.js # render 'index.js.erb'
+    end
   end
 
   def show
     @product = Product.find(params[:id])
 
-
     if current_user
       @review = @product.reviews.build
-  end
+    end
+
+    # render show
   end
 
   def new
@@ -24,9 +42,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to products_url, notice: "Product was created successfully"
+      redirect_to products_url
     else
-      flash.now[:alert] = "Error saving product"
       render :new
     end
   end

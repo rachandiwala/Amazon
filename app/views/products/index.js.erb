@@ -1,0 +1,12 @@
+$('#products').append('<%= j(render @products) %>');
+$('.pagination').replaceWith('<%= j(paginate @products) %>');
+$('.page-entries').html('<%= j(page_entries_info @products) %>');
+
+/*
+
+ THis code is same as above, however sorter
+
+$('#products').html("<%= j(render @products) %>");
+
+
+*/

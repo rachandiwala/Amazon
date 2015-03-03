@@ -1,43 +1,3 @@
-
-<%= form_for(@product) do |f| %>
-
-<table>
-  <tr>
-  
-  <div class="field">
-      <td><%= f.label :name %><br /></td>
-      <td><%= f.text_field :name %></td>
-  </div>
-
-  </tr>
-
-  <tr>
-  
-  <div class="field">
-    <td>  <%= f.label :description %><br /> </td>
-    <td>  <%= f.text_area :description %> </td>
-  </div>
-
-  </tr>
-
-  <tr>
-
-  <div class="field">
-    <td>  <%= f.label :price_in_cents %><br />  </td>
-    <td>  <%= f.number_field :price_in_cents %> </td>
-  </div>
-  </tr>
-
-  <tr>
-    <td> <div class="actions"> </td>
-    <td>  <%= f.submit %> </td>
-  </div>
-  </tr>
-
-<% end %>
-
-</table>
-
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -49,5 +9,21 @@
       <% end %>
       </ul>
     </div>
-  <% end %> 
   <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price_in_cents %><br />
+    <%= f.number_field :price_in_cents %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

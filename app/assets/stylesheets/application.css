@@ -13,3 +13,4 @@
  *= require_tree .
  *= require_self
  */
+/*  .class { background-image: url(<%= asset_path 'ama.png' %>) }
